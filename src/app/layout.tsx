@@ -10,13 +10,12 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "sw
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk", display: "swap" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://siliconpath.in"),
   title: {
-    default: "SimpleSilicon — Free VLSI Learning Platform",
+    default: "SimpleSilicon — Free VLSI Learning",
     template: "%s | SimpleSilicon",
   },
   description:
-    "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
+    "SimpleSilicon — a free, independent VLSI and semiconductor engineering learning project: academy tracks, university video lectures, and career resources. No login required.",
   keywords: [
     "VLSI", "physical design", "STA", "synthesis", "Verilog", "semiconductor",
     "ASIC", "RTL design", "digital logic", "EDA", "OpenLane", "OpenROAD",
@@ -27,17 +26,16 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://siliconpath.in",
     siteName: "SimpleSilicon",
-    title: "SimpleSilicon — Free VLSI Learning Platform",
+    title: "SimpleSilicon — Free VLSI Learning",
     description:
-      "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
+      "Free, independent VLSI learning: academy tracks, university video lectures, and career resources. No login required.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SimpleSilicon — Free VLSI Learning Platform",
+    title: "SimpleSilicon — Free VLSI Learning",
     description:
-      "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
+      "Free, independent VLSI learning: academy tracks, university video lectures, and career resources. No login required.",
   },
   robots: {
     index: true,
@@ -50,7 +48,6 @@ export const metadata: Metadata = {
       "noarchive": true
     },
   },
-  alternates: { canonical: "https://siliconpath.in" },
   icons: {
     icon: "/icon.svg",
     apple: "/icon.svg",
@@ -71,24 +68,10 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://siliconpath.in/#website",
-        "url": "https://siliconpath.in",
-        "name": "SimpleSilicon — Free VLSI Learning Platform",
-        "description": "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
-        "inLanguage": "en-IN",
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://siliconpath.in/#organization",
-        "name": "SimpleSilicon",
-        "url": "https://siliconpath.in",
-        "logo": "https://siliconpath.in/icon.svg",
-        "description": "VLSI learning platform covering physical design, STA, synthesis, Verilog, and design verification.",
-      }
-    ]
+    "@type": "WebSite",
+    "name": "SimpleSilicon",
+    "description": "Free, independent VLSI learning: academy tracks, university video lectures, and career resources.",
+    "inLanguage": "en-IN",
   };
 
   return (

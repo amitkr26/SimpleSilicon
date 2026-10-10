@@ -41,7 +41,7 @@ npm run build
 
 ## Deployment
 
-- **Production**: Vercel, connected to the repo root (`vercel.json`: `framework: nextjs`). Live at https://siliconpath.vercel.app
+- **Production**: Vercel, connected to the repo root (`vercel.json`: `framework: nextjs`). No custom domain is configured at this time; the deployment URL is set in the Vercel project settings.
 - **Docker**: `docker build -t simplesilicon .` (multi-stage, Next.js standalone output, port 3000)
 - `docker-compose.yml` (root): `docker compose up --build` runs the production-mode app container on :3000
 

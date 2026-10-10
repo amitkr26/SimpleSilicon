@@ -1,36 +1,31 @@
-# SimpleSilicon — Free VLSI Learning Platform
+# SimpleSilicon — Free VLSI Learning
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-SimpleSilicon is a 100% free learning platform for VLSI and semiconductor engineers. No paywalls, no premium tiers, no course selling, no login required. Live at [siliconpath.in](https://siliconpath.in) · hosted on Vercel ([siliconpath.vercel.app](https://siliconpath.vercel.app)).
+SimpleSilicon is a free, independent learning project for VLSI and semiconductor
+engineers. No paywalls, no premium tiers, no course selling, no login required.
 
-This repository **is** the Next.js web application — the app lives at the repo root (`src/`, `public/`, `package.json`), with support dirs (`project-bible/`) alongside.
+> **Note:** Some curriculum sections (structured learning paths, interview
+> banks) are temporarily not served while their content is being independently
+> redeveloped. The Academy, video course library, and career resources below
+> remain fully live.
 
-## Features
+This repository **is** the Next.js web application — the app lives at the repo
+root (`src/`, `public/`, `package.json`), with support dirs (`project-bible/`) alongside.
+
+## Features (live)
 
 ### VLSI Learning Academy (`/academy`)
-- 7 structured learning tracks (Digital Logic, Verilog, SystemVerilog, UVM, RTL Design, Physical Design, Interview Prep)
-- **Embedded video lectures per track**: full YouTube playlists play inline (click-to-play `videoseries` embeds) + NPTEL course cards, mapped in `src/lib/video-references.ts`
-- Day-by-day curricula with practice quizzes, gated assessments, and localStorage progress tracking
-
-### 15 Learning Paths (`/learn`)
-- **Foundation (5):** Digital Electronics, Verilog HDL, Hardware Protocols, Design Verification, Clock Domain Crossing
-- **Backend & Signoff (6):** Synthesis, ASIC Physical Design, Static Timing Analysis, Physical Verification, Low Power & UPF, Design For Test
-- **Tools & Career (4):** TCL for EDA, Linux for VLSI, Interview Q&A, Career Roadmap
-- **150 modules** with theory, examples, and practice
+- Self-paced learning tracks (Digital Logic, Verilog, SystemVerilog, UVM, RTL Design, Physical Design, Interview Prep)
+- **Embedded video lectures per track**: inline YouTube playlist embeds + NPTEL course cards, mapped in `src/lib/video-references.ts`
+- Day-by-day curricula with practice quizzes and progress tracking
 
 ### Free Video Course Library (`/learn/video-courses`)
-- 74 curated free courses: 70 NPTEL courses + 4 YouTube playlists (Neso Academy, VLSI Academy)
-- Searchable, filterable by 8 topic groups; also surfaced as companion cards per learning path
+- Curated NPTEL university courses and YouTube playlists
+- Searchable, filterable by topic group
 
-### Engineering Lab (`/engineering-lab`)
-- Real-world signoff violation debugging cases (timing, congestion, DRC) with report analysis
-
-### STA Interview Questions (`/sta-interview-questions`)
-- 55 questions across 11 topics with expandable engineering answers
-
-### Guides & Resources (`/courses`, `/resources`)
-- OpenLane RTL-to-GDS tapeout guide, resume tips, career roadmap, VLSI role profiles and EDA toolchains
+### Career Resources (`/resources`)
+- VLSI role profiles and EDA toolchains, direct from tapeout experience
 
 ## Tech Stack
 

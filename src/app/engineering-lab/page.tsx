@@ -16,6 +16,8 @@ import {
   Sliders,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 
 type CaseSeverity = "critical" | "high" | "medium";
 
@@ -204,6 +206,13 @@ Inter-Group Skew Analysis:
 ];
 
 export default function EngineeringLabPage() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="Engineering Lab" />;
+  }
+  return <EngineeringLabPageInner />;
+}
+
+function EngineeringLabPageInner() {
   const [selectedCaseIndex, setSelectedCaseIndex] = useState(0);
   const [revealed, setRevealed] = useState(false);
 

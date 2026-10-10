@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 
 export const metadata = {
   title: "OpenLane RTL-to-GDSII Guide — Complete Open-Source Tapeout Walkthrough",
@@ -84,6 +86,13 @@ const FLOW_STEPS = [
 ];
 
 export default function OpenLaneGuidePage() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="Course Guides" />;
+  }
+  return <OpenLaneGuidePageInner />;
+}
+
+function OpenLaneGuidePageInner() {
   return (
     <div className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-10">

@@ -80,62 +80,15 @@
 
 ## Environment Variable Reference
 
-### Frontend (Vercel Project Settings → Environment Variables)
+The application reads exactly three environment variables (see `src/lib/supabase/`).
 
 | Variable | Scope | Source | Rotation |
 | :--- | :--- | :--- | :--- |
-| `NEXT_PUBLIC_SUPABASE_URL` | All | Supabase DB1 Dashboard | Quarterly |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | All | Supabase DB1 Dashboard | Quarterly |
-| `SUPABASE_SERVICE_ROLE_KEY` | Server only | Supabase DB1 Dashboard | Quarterly |
-| `SUPABASE_2_URL` | All | Supabase DB2 Dashboard | Quarterly |
-| `SUPABASE_2_SERVICE_ROLE_KEY` | Server only | Supabase DB2 Dashboard | Quarterly |
-| `SUPABASE_2_ANON_KEY` | All | Supabase DB2 Dashboard | Quarterly |
-| `NEON_1_DATABASE_URL` | Server only | Neon DB1 Dashboard | Quarterly |
-| `NEON_2_DATABASE_URL` | Server only | Neon DB2 Dashboard | Quarterly |
-| `GROQ_API_KEY` | Server only | Groq Console | Quarterly |
-| `GEMINI_API_KEY` | Server only | Google AI Studio | Quarterly |
-| `NVIDIA_NIM_API_KEY` | Server only | NVIDIA NGC | Quarterly |
-| `OPENROUTER_API_KEY` | Server only | OpenRouter Dashboard | Quarterly |
-| `CLOUDFLARE_AI_TOKEN` | Server only | Cloudflare Dashboard | Quarterly |
-| `HUGGINGFACE_API_KEY` | Server only | HF Settings | Quarterly |
-| `AWS_BEARER_TOKEN_BEDROCK` | Server only | AWS IAM | Quarterly |
-| `RESEND_API_KEY` | Server only | Resend Dashboard | Quarterly |
-| `TELEGRAM_BOT_TOKEN` | Server only | BotFather | Quarterly |
-| `UPSTASH_REDIS_REST_URL` | All | Upstash Console | Quarterly |
-| `UPSTASH_REDIS_REST_TOKEN` | Server only | Upstash Console | Quarterly |
-| `CRON_SECRET` | Server only | Generate: `openssl rand -hex 32` | Quarterly |
-| `ADMIN_PASSWORD` | Server only | Generate: `openssl rand -base64 24` | Quarterly |
-| `ADMIN_HMAC_SECRET` | Server only | Generate: `openssl rand -hex 32` | Quarterly |
-| `NEXT_PUBLIC_SITE_URL` | All | `https://siliconpath.vercel.app` | On domain change |
-| `NEXT_PUBLIC_SENTRY_DSN` | All | Sentry Project Settings | On project change |
-| `GOOGLE_CLOUD_CREDENTIALS_BASE64` | Server only | GCP IAM → Service Account Key | Quarterly |
-| `GCP_PROJECT_ID` | Server only | GCP Console | Rare |
-| `GCP_DOCUMENT_AI_LOCATION` | Server only | `us` / `eu` | Rare |
-| `GCP_DOCUMENT_AI_PROCESSOR_ID` | Server only | GCP Document AI Console | Rare |
-| `GCP_STORAGE_BUCKET_NAME` | Server only | GCP Cloud Storage | Rare |
+| `NEXT_PUBLIC_SUPABASE_URL` | All | Supabase Dashboard | Quarterly |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | All | Supabase Dashboard | Quarterly |
+| `SUPABASE_SERVICE_ROLE_KEY` | Server only | Supabase Dashboard | Quarterly |
 
-### Standalone API (Render/Container Env Vars)
-
-| Variable | Source |
-| :--- | :--- |
-| `SUPABASE_URL` | Supabase DB1 Dashboard |
-| `SUPABASE_ANON_KEY` | Supabase DB1 Dashboard |
-| `SUPABASE_SERVICE_ROLE_KEY` | Supabase DB1 Dashboard |
-| `SUPABASE_2_URL` | Supabase DB2 Dashboard |
-| `SUPABASE_2_SERVICE_ROLE_KEY` | Supabase DB2 Dashboard |
-| `PORT` | `8080` |
-| `NODE_ENV` | `production` |
-| `ALLOWED_ORIGINS` | `https://siliconpath.vercel.app,http://localhost:3000` |
-| `ADMIN_PASSWORD` | Same as frontend |
-| `ADMIN_HMAC_SECRET` | Same as frontend |
-| `GROQ_API_KEY` | Same as frontend |
-| `GEMINI_API_KEY` | Same as frontend |
-| `NVIDIA_NIM_API_KEY` | Same as frontend |
-| `NVIDIA_NIM_BASE_URL` | Same as frontend |
-| `OPENROUTER_API_KEY` | Same as frontend |
-| `CLOUDFLARE_AI_TOKEN` | Same as frontend |
-| `HUGGINGFACE_API_KEY` | Same as frontend |
-| `AWS_BEARER_TOKEN_BEDROCK` | Same as frontend |
+There is no production backend, admin API, cron, or AI-gateway layer in this repository.
 
 ---
 
@@ -157,7 +110,7 @@
 
 **Do not file public GitHub issues for security vulnerabilities.**
 
-Email: **security@siliconpath.vercel.app** (or use GitHub Security Advisories private reporting)
+Use GitHub Security Advisories private reporting.
 
 Include:
 - Description of the vulnerability

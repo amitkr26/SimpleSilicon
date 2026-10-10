@@ -44,17 +44,21 @@ The application serves a single focused purpose: **free VLSI learning for semico
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │ 2. Learning Paths         /learn, /learn/[pathId],                              │
 │    (/learn)               /learn/[pathId]/[moduleId]                            │
-│                           15 paths (5 Foundations + 6 Backend + 4 Tools/Career) │
+│                           15 paths, 150 modules — content retained in repo,    │
+│                           NOT served while CURRICULUM_SECTIONS_AVAILABLE=false │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │ 3. Engineering Lab        /engineering-lab                                      │
-│                           4 real EDA diagnostic report cases                    │
+│                           4 real EDA diagnostic report cases — NOT served      │
+│                           while CURRICULUM_SECTIONS_AVAILABLE=false            │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │ 4. STA Interview Q&A      /sta-interview-questions                              │
-│                           128 questions, 11 topics, search & math derivations   │
+│                           55 questions, 11 topics — NOT served while           │
+│                           CURRICULUM_SECTIONS_AVAILABLE=false                  │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │ 5. Free Resources         /courses, /courses/openlane-rtl-to-gds,               │
 │                           /courses/resume-tips                                  │
-│                           OpenLane Sky130 tapeout guide, resume guidelines      │
+│                           OpenLane Sky130 tapeout guide, resume guidelines —   │
+│                           NOT served while CURRICULUM_SECTIONS_AVAILABLE=false │
 ├─────────────────────────────────────────────────────────────────────────────────┤
 │ 6. Career Resources       /resources                                            │
 │                           Roles breakdown (PD, DV, RTL, DFT), EDA toolchains    │
@@ -82,7 +86,7 @@ Defined centrally in `frontend/src/styles/design-tokens.ts`:
 
 ## 4. Content Delivery & State Management
 
-- **Zero Auth Gating:** All learning paths, modules, academy days, engineering labs, and interview Q&As are immediately accessible.
+- **Zero Auth Gating (academy + video courses):** Academy tracks/days and video courses are immediately accessible without login. Learning paths, engineering lab, STA Q&A, and `/courses` guides are code-hidden behind `src/lib/content-status.ts` until independently redeveloped, then restored by flipping `CURRICULUM_SECTIONS_AVAILABLE` back to `true`.
 - **Client-side Progress Tracking:** `localStorage` provides instant, unauthenticated progress persistence for completed modules and track days (`learn-${pathSlug}-completed`).
 - **Optional Cloud Sync:** Optional Supabase API synchronization if an authenticated session exists, with immediate fallback to local storage.
 - **Static Generation:** Next.js prerenders all 16 static routes during build time for instant page loads.

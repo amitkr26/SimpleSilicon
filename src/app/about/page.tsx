@@ -1,17 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import {
-  CircuitBoard,
   BookOpen,
   GraduationCap,
+  Briefcase,
   ArrowRight,
-  ShieldCheck,
   ChevronRight,
-  Terminal,
   Cpu,
-  Mail,
-  Layers,
-  Heart,
   CheckCircle2,
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
@@ -26,31 +21,31 @@ export const metadata = {
 const PILLARS = [
   {
     icon: <BookOpen className="w-5 h-5 text-blue-600" />,
-    title: "15 Structured Learning Paths",
-    desc: "150 structured technical modules spanning the full VLSI spectrum — from digital logic gates and Verilog HDL to clock tree synthesis, low power UPF, and physical verification.",
-    href: "/learn",
-    cta: "Browse Paths",
-  },
-  {
-    icon: <CircuitBoard className="w-5 h-5 text-indigo-600" />,
-    title: "Hands-on Engineering Lab",
-    desc: "Interactive diagnostic case studies based on authentic EDA reports (PrimeTime, Tempus, Innovus, ICC2). Practice diagnosing setup violations, hold races, congestion, and clock skew.",
-    href: "/engineering-lab",
-    cta: "Open Engineering Lab",
+    title: "VLSI Academy",
+    desc: "Self-paced learning tracks with embedded university video lectures and progress tracking — from digital logic and Verilog to physical design.",
+    href: "/academy",
+    cta: "Explore the Academy",
   },
   {
     icon: <GraduationCap className="w-5 h-5 text-emerald-600" />,
-    title: "55 STA Interview Questions",
-    desc: "Curated static timing analysis questions with rigorous engineering answers, setup/hold derivations, OCV/AOCV explanations, and crosstalk noise analysis.",
-    href: "/sta-interview-questions",
-    cta: "Practice STA Questions",
+    title: "Free Video Course Library",
+    desc: "Curated NPTEL university courses and full YouTube playlists covering digital design, verification, DFT, low power, and fabrication.",
+    href: "/learn/video-courses",
+    cta: "Browse Video Courses",
+  },
+  {
+    icon: <Briefcase className="w-5 h-5 text-indigo-600" />,
+    title: "Career Resources",
+    desc: "Semiconductor engineering role profiles and EDA toolchains explained — what each discipline actually does on a tapeout team.",
+    href: "/resources",
+    cta: "View Resources",
   },
 ];
 
 const VALUES = [
   {
     title: "100% Free & Open Access",
-    desc: "Semiconductor education should not be locked behind $3,000 corporate bootcamps or artificial paywalls. Every lesson, interview answer, and lab case on SimpleSilicon is completely free and accessible without mandatory login.",
+    desc: "Semiconductor education should not be locked behind $3,000 corporate bootcamps or artificial paywalls. Everything on SimpleSilicon is completely free and accessible without mandatory login.",
   },
   {
     title: "Rooted in Silicon Reality",
@@ -162,20 +157,23 @@ export default function AboutPage() {
               <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Open Community & Feedback</span>
               <h3 className="text-xl font-bold text-white">Questions, Suggestions, or Contributions?</h3>
               <p className="text-xs text-slate-300 max-w-lg leading-relaxed">
-                SimpleSilicon is continuously updated with new lab cases, timing closure scenarios, and interview questions. We welcome technical feedback from semiconductor engineers worldwide.
+                SimpleSilicon is continuously updated with structured VLSI learning
+                content. We welcome technical feedback from semiconductor engineers worldwide.
               </p>
               <div className="pt-2">
                 <a
-                  href="mailto:hello@siliconpath.in"
-                  className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-mono text-sm font-medium"
+                  href="https://github.com/amitkr26/SimpleSilicon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium"
                 >
-                  <Mail className="w-4 h-4" /> hello@siliconpath.in
+                  Contribute on GitHub <ArrowRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
 
             <div className="flex items-center gap-3 shrink-0">
-              <Button href="/learn" variant="primary" size="md">
+              <Button href="/academy" variant="primary" size="md">
                 Start Learning Free <ArrowRight className="w-4 h-4 ml-1.5" />
               </Button>
             </div>

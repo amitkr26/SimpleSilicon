@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 
 export const metadata = {
   title: "VLSI Technical Resume Guide — How to Get Shortlisted for Semiconductor Roles",
@@ -61,6 +63,13 @@ const SKILL_CATEGORIES = [
 ];
 
 export default function ResumeTipsPage() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="Course Guides" />;
+  }
+  return <ResumeTipsPageInner />;
+}
+
+function ResumeTipsPageInner() {
   return (
     <div className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-10">

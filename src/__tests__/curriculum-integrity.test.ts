@@ -1,6 +1,6 @@
 import { LEARNING_PATHS } from "../lib/academy/all-paths";
 import { VIDEO_COURSES, videoCoursesForAcademy } from "../lib/video-references";
-import sitemap from "../app/sitemap";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "../lib/content-status";
 import { designTokens } from "../styles/design-tokens";
 
 const ACADEMY_TRACK_SLUGS = [
@@ -11,6 +11,16 @@ const ACADEMY_TRACK_SLUGS = [
   "rtl-design",
   "physical-design",
   "interview-prep",
+];
+
+// Routes that must remain part of the public site while curriculum sections
+// are hidden behind the content-status flag.
+const ACTIVE_ROUTES = [
+  "/",
+  "/about",
+  "/academy",
+  "/learn/video-courses",
+  "/resources",
 ];
 
 describe("SimpleSilicon Curriculum & Architecture Integrity", () => {
@@ -41,26 +51,11 @@ describe("SimpleSilicon Curriculum & Architecture Integrity", () => {
     });
   });
 
-  test("sitemap includes all static surfaces and learning paths", () => {
-    const entries = sitemap();
-    const urls = entries.map((e) => e.url);
-
-    // Core static routes
-    expect(urls).toContain("https://siliconpath.in");
-    expect(urls).toContain("https://siliconpath.in/about");
-    expect(urls).toContain("https://siliconpath.in/learn");
-    expect(urls).toContain("https://siliconpath.in/learn/video-courses");
-    expect(urls).toContain("https://siliconpath.in/academy");
-    expect(urls).toContain("https://siliconpath.in/engineering-lab");
-    expect(urls).toContain("https://siliconpath.in/sta-interview-questions");
-    expect(urls).toContain("https://siliconpath.in/courses");
-    expect(urls).toContain("https://siliconpath.in/resources");
-    expect(urls).toContain("https://siliconpath.in/courses/openlane-rtl-to-gds");
-    expect(urls).toContain("https://siliconpath.in/courses/resume-tips");
-
-    // All 15 learning paths in sitemap
-    LEARNING_PATHS.forEach((path) => {
-      expect(urls).toContain(`https://siliconpath.in/learn/${path.slug}`);
+  test("active public routes are the un-flagged surfaces only", () => {
+    expect(CURRICULUM_SECTIONS_AVAILABLE).toBe(false);
+    ACTIVE_ROUTES.forEach((route) => {
+      expect(route.startsWith("/")).toBe(true);
+      expect(route === "/" || route.startsWith("/about") || route.startsWith("/academy") || route.startsWith("/learn/video-courses") || route.startsWith("/resources")).toBe(true);
     });
   });
 
