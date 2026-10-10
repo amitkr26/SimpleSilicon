@@ -17,6 +17,8 @@ import {
   Cpu,
 } from "lucide-react";
 import { LEARNING_PATHS } from "@/lib/academy/all-paths";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -45,6 +47,13 @@ function toggleModuleComplete(pathSlug: string, moduleSlug: string): boolean {
 }
 
 export default function ModulePage() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="Module Library" />;
+  }
+  return <ModulePageInner />;
+}
+
+function ModulePageInner() {
   const params = useParams();
   const router = useRouter();
   const pathSlug = params.path as string;

@@ -42,11 +42,11 @@ export default function VideoCoursesPage() {
       {/* Header */}
       <div className="border-b border-slate-200/80 pb-8">
         <Link
-          href="/learn"
+          href="/"
           className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-blue-600 transition-colors mb-4"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
-          Back to Learning Paths
+          Back to Home
         </Link>
         <div className="max-w-3xl space-y-3">
           <p className="text-xs font-semibold text-blue-600 uppercase tracking-wider">

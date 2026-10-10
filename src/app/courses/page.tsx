@@ -18,6 +18,8 @@ import {
 import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 
 interface Resource {
   id: string;
@@ -104,6 +106,13 @@ const RESOURCES: Resource[] = [
 ];
 
 export default function CoursesPage() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="Courses & Guides" />;
+  }
+  return <CoursesPageInner />;
+}
+
+function CoursesPageInner() {
   return (
     <div className="min-h-screen bg-slate-50 py-10 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto space-y-10">

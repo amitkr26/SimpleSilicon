@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowRight, Layers, Zap, BookOpen, Clock, Search } from "lucide-react";
 import { LEARNING_PATHS } from "@/lib/academy/all-paths";
 import { VIDEO_COURSES } from "@/lib/video-references";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { cn } from "@/lib/utils";
@@ -38,6 +40,13 @@ const LEVEL_TONE: Record<string, "accent" | "success" | "warning" | "purple" | "
 };
 
 export default function LearnIndex() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="Learning Paths" />;
+  }
+  return <LearnIndexInner />;
+}
+
+function LearnIndexInner() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
 

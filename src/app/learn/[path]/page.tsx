@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { LEARNING_PATHS } from "@/lib/academy/all-paths";
 import { videoCoursesForPath } from "@/lib/video-references";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -34,6 +36,13 @@ function getCompletedModules(pathSlug: string): string[] {
 }
 
 export default function LearningPathPage() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="Learning Paths" />;
+  }
+  return <LearningPathPageInner />;
+}
+
+function LearningPathPageInner() {
   const params = useParams();
   const pathSlug = params.path as string;
 

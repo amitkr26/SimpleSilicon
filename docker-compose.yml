@@ -10,5 +10,4 @@ services:
     environment:
       - NODE_ENV=production
       - NEXT_PUBLIC_APP_NAME=SimpleSilicon
-      - NEXT_PUBLIC_SITE_URL=https://siliconpath.vercel.app
     restart: always

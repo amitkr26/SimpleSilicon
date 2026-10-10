@@ -13,8 +13,8 @@ SimpleSilicon is a 100% free VLSI learning platform for semiconductor engineers.
 - Progress tracking with local storage fallback and optional cloud sync
 - Clean technical dashboard (overview, track, day, and assessment pages) on the central design system — no neo-brutalist or artificial locks
 
-### 2. Learning Paths (`/learn`)
-- 15 career-focused learning paths organized into 3 tiers:
+### 2. Learning Paths (`/learn`) — temporarily not served, pending independent redevelopment
+- 15 career-focused learning paths organized into 3 tiers (content retained in `src/lib/academy/all-paths.ts` for review; hidden behind `CURRICULUM_SECTIONS_AVAILABLE`):
   - **Foundations (5):** Digital Electronics, Verilog HDL, Hardware Protocols, Design Verification, Clock Domain Crossing
   - **Backend & Signoff (6):** Synthesis, ASIC Physical Design, Static Timing Analysis, Physical Verification, Low Power & UPF, Design For Test
   - **Tools & Career (4):** TCL for EDA, Linux for VLSI, Interview Q&A, Career Roadmap
@@ -26,7 +26,7 @@ SimpleSilicon is a 100% free VLSI learning platform for semiconductor engineers.
 - Filtered from the live NPTEL catalog to VLSI-relevant coverage, grouped into 8 topics
 - Every learning path page links its companion NPTEL/YouTube course(s)
 
-### 4. Engineering Lab (`/engineering-lab`)
+### 4. Engineering Lab (`/engineering-lab`) — temporarily not served, pending independent redevelopment
 - Real-world diagnostic case studies modeled on authentic EDA timing and signoff reports:
   - Setup Time Violation on High-Fanout Reset Tree (PrimeTime report analysis, WNS -420ps closure)
   - Hold Time Race on Shift Register Datapath (Tempus min-delay violation, buffer insertion)
@@ -34,13 +34,13 @@ SimpleSilicon is a 100% free VLSI learning platform for semiconductor engineers.
   - Clock Skew Imbalance in Mesochronous Clock Mesh (ICC2 CTS report, balanced H-tree insertion)
 - Raw tool terminal excerpts (`#0B1120`), root cause analysis, and signoff takeaways
 
-### 5. STA Interview Questions (`/sta-interview-questions`)
+### 5. STA Interview Questions (`/sta-interview-questions`) — temporarily not served, pending independent redevelopment
 - 55 curated interview questions across 11 static timing analysis topics (11 topics × 5; previously declared as 128 across all surfaces — reconciled to the actual 55 on 2026-09-16)
 - Setup/Hold slack derivations, clock skew, jitter, OCV/AOCV, crosstalk noise, and SDC constraints
 - Instant search filter and topic selection chips
 - Expandable detailed engineering proofs and mathematical derivations
 
-### 6. Free Resources & Tapeout Guides (`/courses`)
+### 6. Free Resources & Tapeout Guides (`/courses`) — temporarily not served, pending independent redevelopment
 - OpenLane RTL-to-GDSII Complete Flow Guide (`/courses/openlane-rtl-to-gds`): Full open-source tapeout walkthrough on SkyWater Sky130 PDK
 - Semiconductor Technical Resume & Portfolio Guide (`/courses/resume-tips`): Actionable bullet point formulas, EDA tool matrices, and ATS optimization
 - 8-Week VLSI Fresher Study Plan (`/learn/career-roadmap`)
@@ -65,4 +65,4 @@ SimpleSilicon is a 100% free VLSI learning platform for semiconductor engineers.
 - Vercel (hosting)
 
 ## Partner Platforms
-- [ElectroBridge](https://electrobridge.vercel.app) — AI resume builder for engineers
+- (none — third-party affiliate links removed)

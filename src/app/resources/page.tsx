@@ -29,61 +29,38 @@ const CAREER_TRACKS = [
     scope: "Netlist to GDSII implementation: floorplanning, power planning, placement, CTS, routing, timing closure, and physical signoff (DRC/LVS/IR drop).",
     tools: ["Synopsys ICC2", "Cadence Innovus", "Synopsys PrimeTime", "Siemens Calibre"],
     keySkills: ["TCL scripting", "STA & SDC constraints", "LEF/DEF flows", "Congestion & hold fixing"],
-    learnPath: "/learn/physical-design",
+    learnPath: "",
   },
   {
     role: "Design Verification (DV) Engineer",
     scope: "Pre-silicon functional verification: architecting constrained-random testbenches, writing assertions (SVA), building UVM scoreboards, and achieving 100% coverage.",
     tools: ["Synopsys VCS", "Cadence Xcelium", "Synopsys Verdi", "Siemens Questa"],
     keySkills: ["SystemVerilog / UVM", "Constrained-random testing", "Functional & code coverage", "DPI-C"],
-    learnPath: "/learn/design-verification",
+    learnPath: "",
   },
   {
     role: "RTL Design Engineer",
     scope: "Microarchitecture definition and digital logic design: writing synthesizeable Verilog/SystemVerilog, pipelining datapath logic, and bus protocol interfacing.",
     tools: ["Synopsys Design Compiler", "Cadence Genus", "SpyGlass (Lint/CDC)", "Verilator"],
     keySkills: ["AMBA AXI/AHB protocols", "Clock domain crossing (CDC)", "Low-power design (UPF)", "FSM architecture"],
-    learnPath: "/learn/verilog",
+    learnPath: "",
   },
   {
     role: "DFT (Design For Test) Engineer",
     scope: "Test architecture design: scan insertion, ATPG (Automatic Test Pattern Generation), BIST (Memory/Logic BIST), and boundary scan (JTAG) for silicon bring-up.",
     tools: ["Siemens Tessent", "Synopsys TestMAX", "Synopsys DFT Compiler"],
     keySkills: ["Scan chain stitching", "Fault modeling (Stuck-at, At-speed)", "IEEE 1149.1 JTAG", "MBIST"],
-    learnPath: "/learn/design-for-test",
+    learnPath: "",
   },
 ];
 
-const CURATED_GUIDES = [
-  {
-    title: "VLSI Technical Resume & Portfolio Guide",
-    category: "Career & Hiring",
-    desc: "Actionable formulas for framing semiconductor projects, formatting ATS-compliant skills matrices, and avoiding common hiring screener pitfalls.",
-    href: "/courses/resume-tips",
-    badge: "Essential",
-  },
-  {
-    title: "8-Week VLSI Fresher Study Plan",
-    category: "Study Roadmap",
-    desc: "A structured, week-by-week blueprint covering digital electronics, Verilog synthesis, STA formulas, and open-source EDA tooling setup.",
-    href: "/learn/career-roadmap",
-    badge: "Roadmap",
-  },
-  {
-    title: "55 Static Timing Analysis (STA) Interview Questions",
-    category: "Interview Prep",
-    desc: "Detailed answers with setup/hold math, clock jitter, crosstalk delay, and SDC constraints asked by Intel, Qualcomm, Nvidia, and TI.",
-    href: "/sta-interview-questions",
-    badge: "Practice",
-  },
-  {
-    title: "OpenLane RTL-to-GDSII Practical Walkthrough",
-    category: "Hands-on Project",
-    desc: "Build a demonstrable tapeout-ready macro using open-source tools (Yosys, OpenROAD, Magic) on the SkyWater 130nm PDK for your GitHub portfolio.",
-    href: "/courses/openlane-rtl-to-gds",
-    badge: "Hands-on",
-  },
-];
+const CURATED_GUIDES: {
+  title: string;
+  category: string;
+  desc: string;
+  href: string;
+  badge: string;
+}[] = [];
 
 export default function ResourcesPage() {
   return (
@@ -161,9 +138,11 @@ export default function ResourcesPage() {
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-100">
-                  <Button href={track.learnPath} variant="secondary" size="sm" className="w-full justify-center">
-                    Explore {track.role.replace(" Engineer", "")} Path <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
-                  </Button>
+                  {track.learnPath ? (
+                    <Button href={track.learnPath} variant="secondary" size="sm" className="w-full justify-center">
+                      Explore {track.role.replace(" Engineer", "")} Path <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                    </Button>
+                  ) : null}
                 </div>
               </div>
             ))}
@@ -210,7 +189,7 @@ export default function ResourcesPage() {
             <ShieldCheck className="w-5 h-5 text-emerald-600" /> Platform Principles
           </h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            All career guides, syllabus modules, and interview questions on SimpleSilicon are written from direct tapeout and timing closure experience. We do not accept sponsored recruitment placements, pay-for-placement resume services, or locked premium tiers. Everything is 100% free and open to anyone studying semiconductor engineering.
+            All guides on SimpleSilicon are written from direct tapeout and timing closure experience. We do not accept sponsored recruitment placements, pay-for-placement resume services, or locked premium tiers. Everything is 100% free and open to anyone studying semiconductor engineering.
           </p>
         </div>
 

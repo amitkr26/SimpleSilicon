@@ -14,6 +14,8 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
+import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
+import ContentUnavailable from "@/components/ContentUnavailable";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -509,6 +511,13 @@ function QuestionCard({
 /* ------------------------------------------------------------------ */
 
 export default function STAInterviewPage() {
+  if (!CURRICULUM_SECTIONS_AVAILABLE) {
+    return <ContentUnavailable label="STA Interview Questions" />;
+  }
+  return <STAInterviewPageInner />;
+}
+
+function STAInterviewPageInner() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTopicId, setSelectedTopicId] = useState<string>("all");
 
