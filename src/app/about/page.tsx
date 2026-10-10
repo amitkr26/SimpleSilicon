@@ -162,7 +162,7 @@ export default function AboutPage() {
               </p>
               <div className="pt-2">
                 <a
-                  href="https://github.com/amitkr26/SiliconPath"
+                  href="https://github.com/amitkr26/SimpleSilicon"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium"
