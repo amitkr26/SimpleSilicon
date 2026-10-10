@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Tests updated** `src/__tests__/curriculum-integrity.test.ts`: sitemap/URL-based test replaced with active-route assertions (relative paths); data-integrity tests retained (content files stay in git for review).
 
 ### Deployed to production (2026-10-10)
+
+### Product Recovery — Curriculum & Route Restoration
+- **Curriculum data model**: New `src/lib/curriculum/types.ts` with original `CurriculumPath`, `Module`, `LessonSection`, `WorkedExample`, `Exercise`, and `KnowledgeCheck` types. Every lesson, example, exercise and quiz is original writing from general technical knowledge (IEEE/AMBA specs, vendor documentation, standard textbooks). No content copied from any other platform; see `PROVENANCE.md` for source/ledger.
 - **Mitigation is live** on `https://siliconpath.vercel.app` — deployment `dpl_9CoNzHxi5feadk1iLY1gaPPh7W7A` (target `production`, Ready). Verified uncached: homepage title `SimpleSilicon — Free VLSI Learning`, claim-free body, `/learn`, `/learn/*`, `/sta-interview-questions`, `/engineering-lab`, `/courses` all return the "temporarily unavailable" notice; no `15 Career`/`55`/`ElectroBridge` markers. Deployed via Vercel CLI from commit `77ae67e` (branch `simplesilicon-content-audit`).
 - **GitHub repo renamed** `amitkr26/SiliconPath` → `amitkr26/SimpleSilicon`; local `origin` updated and the branch re-pushed. About-page Contribution link points at the new URL (`77ae67e`).
 - **Vercel MCP wired**: `.opencode/mcp-servers/vercel-server.mjs` reads `VERCEL_TOKEN` from the gitignored `siliconpath-credentials.txt`, which must use the parser's `Vercel` / `Access Token: <token>` section format (`_creds.mjs` regex). Project linked locally (`.vercel/project.json`, gitignored) to `prj_ZVXuFY5pm25Fzd6VHyeLNHwygSCt` under team `siliconpath`. Smoke-tested `initialize`/`tools/list`/`tools/call vercel_deployments` end-to-end.

@@ -3,34 +3,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Layers, Zap, BookOpen, Clock, Search } from "lucide-react";
-import { LEARNING_PATHS } from "@/lib/academy/all-paths";
+import { PATHS, getPath, PATH_SLUGS } from "@/lib/curriculum/index";
 import { VIDEO_COURSES } from "@/lib/video-references";
-import { CURRICULUM_SECTIONS_AVAILABLE } from "@/lib/content-status";
-import ContentUnavailable from "@/components/ContentUnavailable";
 import { Badge } from "@/components/ui/Badge";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { cn } from "@/lib/utils";
-
-const CATEGORIES = [
-  {
-    key: "foundations" as const,
-    label: "Foundations",
-    description: "Digital circuits, binary logic, HDL description, and functional verification.",
-    icon: Layers,
-  },
-  {
-    key: "backend" as const,
-    label: "Backend & Signoff (RTL to GDSII)",
-    description: "Physical implementation, clock tree synthesis, routing, STA, and signoff checks.",
-    icon: Zap,
-  },
-  {
-    key: "tools-career" as const,
-    label: "Tools & Career",
-    description: "EDA scripting automation, Linux fundamentals, roadmap planning, and interview prep.",
-    icon: BookOpen,
-  },
-];
 
 const LEVEL_TONE: Record<string, "accent" | "success" | "warning" | "purple" | "neutral"> = {
   Beginner: "accent",
@@ -39,21 +16,36 @@ const LEVEL_TONE: Record<string, "accent" | "success" | "warning" | "purple" | "
   "All levels": "neutral",
 };
 
-export default function LearnIndex() {
-  if (!CURRICULUM_SECTIONS_AVAILABLE) {
-    return <ContentUnavailable label="Learning Paths" />;
-  }
-  return <LearnIndexInner />;
-}
+const CATEGORIES = PATHS.map((p) => ({
+  key: p.slug,
+  label: p.title,
+  description: p.summary,
+  icon:
+    p.category === "foundations"
+      ? p.level === "Beginner"
+        ? Layers
+        : p.level === "Intermediate"
+        ? Zap
+        : BookOpen
+      : p.category === "backend"
+      ? p.level === "Beginner"
+        ? Zap
+        : p.level === "Intermediate"
+        ? "success"
+        : "warning"
+      : p.category === "tools-career"
+      ? BookOpen
+      : Layers,
+}));
 
-function LearnIndexInner() {
+export default function LearnIndex() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
 
-  const filteredPaths = LEARNING_PATHS.filter((p) => {
+  const filteredPaths = PATHS.filter((p) => {
     const matchesSearch =
       p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.summary.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.tools.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
 
     const matchesCategory = activeCategory === "all" || p.category === activeCategory;
@@ -69,10 +61,11 @@ function LearnIndexInner() {
             Curriculum Directory
           </p>
           <h1 className="font-display text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-            15 Structured Learning Paths
+            Structured Learning Paths
           </h1>
           <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-            From digital logic foundations to advanced physical design and timing signoff. 150 self-paced modules, completely free and open.
+            Original lessons covering digital logic through signoff, written independently
+            for SimpleSilicon. No paywalls, no login required.
           </p>
         </div>
 
@@ -88,10 +81,10 @@ function LearnIndexInner() {
                   : "bg-white text-slate-600 border border-slate-200 hover:bg-slate-50"
               )}
             >
-              All Paths ({LEARNING_PATHS.length})
+              All Paths ({filteredPaths.length})
             </button>
             {CATEGORIES.map((c) => {
-              const count = LEARNING_PATHS.filter((p) => p.category === c.key).length;
+              const count = filteredPaths.filter((p) => p.category === c.key).length;
               return (
                 <button
                   key={c.key}
@@ -138,7 +131,7 @@ function LearnIndexInner() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {pathsInCat.map((path) => {
                 const totalMinutes = path.modules.reduce((acc, m) => {
-                  const num = parseInt(m.duration);
+                  const num = m.minutes;
                   return acc + (isNaN(num) ? 0 : num);
                 }, 0);
 
@@ -151,7 +144,7 @@ function LearnIndexInner() {
                       <div className="flex items-center justify-between mb-3">
                         <Badge tone={LEVEL_TONE[path.level] || "neutral"}>{path.level}</Badge>
                         <span className="text-xs text-slate-400 font-medium">
-                          {path.moduleCount} modules
+                          {path.modules.length} modules
                         </span>
                       </div>
 
@@ -160,7 +153,7 @@ function LearnIndexInner() {
                       </h3>
 
                       <p className="text-xs text-slate-500 leading-relaxed mb-4">
-                        {path.description}
+                        {path.summary}
                       </p>
 
                       {path.tools.length > 0 && (
@@ -200,10 +193,10 @@ function LearnIndexInner() {
       <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 sm:p-8 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="space-y-1">
           <h2 className="font-display font-bold text-lg text-white">
-            NPTEL &amp; YouTube Video Course Library
+            NPTEL & YouTube Video Course Library
           </h2>
           <p className="text-xs text-blue-100 leading-relaxed max-w-xl">
-            {`${VIDEO_COURSES.length} curated free video courses from NPTEL IITs and Neso Academy / VLSI Academy playlists, mapped to these learning paths.`}
+            {`${VIDEO_COURSES.length} curated free video courses from NPTEL IITs and Neso Academy / VLSI Academy playlists.`}
           </p>
         </div>
         <Link
@@ -218,7 +211,7 @@ function LearnIndexInner() {
         <div className="text-center py-16 bg-white border border-slate-200 rounded-xl p-8 space-y-3">
           <p className="text-sm font-semibold text-slate-900">No matching learning paths</p>
           <p className="text-xs text-slate-500">
-            No paths matched &quot;{searchQuery}&quot;. Try searching for &quot;Verilog&quot;, &quot;STA&quot;, or &quot;TCL&quot;.
+            No paths matched "{searchQuery}". Try searching for Verilog, STA, or TCL.
           </p>
           <button
             onClick={() => {
