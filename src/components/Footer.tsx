@@ -103,7 +103,7 @@ export default function Footer() {
             <ul className="space-y-2 text-xs">
               <li>
                 <Link href="/about" className="text-slate-500 hover:text-slate-900 transition-colors">
-                  About SiliconPath
+                  About SimpleSilicon
                 </Link>
               </li>
               <li>
@@ -123,7 +123,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <p>
-            &copy; {new Date().getFullYear()} SiliconPath. 100% free and open for semiconductor engineers.
+            &copy; {new Date().getFullYear()} SimpleSilicon. 100% free and open for semiconductor engineers.
           </p>
           <p className="text-slate-400">
             Built for India&apos;s electronics and semiconductor ecosystem.

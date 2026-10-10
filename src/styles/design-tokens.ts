@@ -1,5 +1,5 @@
 /*
- * SiliconPath — Design System Tokens
+ * SimpleSilicon — Design System Tokens
  * Technical & Editorial Engineering Platform
  * Single source of truth for shadows, radii, colors, typography, spacing, icons.
  */

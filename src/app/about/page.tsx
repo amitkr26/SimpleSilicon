@@ -18,9 +18,9 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 
 export const metadata = {
-  title: "About SiliconPath — Free VLSI Engineering Education",
+  title: "About SimpleSilicon — Free VLSI Engineering Education",
   description:
-    "Learn about SiliconPath: our mission to provide structured, free, and un-gated semiconductor engineering education from RTL to GDSII.",
+    "Learn about SimpleSilicon: our mission to provide structured, free, and un-gated semiconductor engineering education from RTL to GDSII.",
 };
 
 const PILLARS = [
@@ -50,7 +50,7 @@ const PILLARS = [
 const VALUES = [
   {
     title: "100% Free & Open Access",
-    desc: "Semiconductor education should not be locked behind $3,000 corporate bootcamps or artificial paywalls. Every lesson, interview answer, and lab case on SiliconPath is completely free and accessible without mandatory login.",
+    desc: "Semiconductor education should not be locked behind $3,000 corporate bootcamps or artificial paywalls. Every lesson, interview answer, and lab case on SimpleSilicon is completely free and accessible without mandatory login.",
   },
   {
     title: "Rooted in Silicon Reality",
@@ -79,7 +79,7 @@ export default function AboutPage() {
         {/* HERO */}
         <header className="border-b border-slate-200 pb-8 space-y-4">
           <div className="flex items-center gap-2">
-            <Badge tone="accent">About SiliconPath</Badge>
+            <Badge tone="accent">About SimpleSilicon</Badge>
             <Badge tone="neutral">Built by Engineers</Badge>
           </div>
           <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
         {/* CORE PILLARS */}
         <section className="space-y-4">
-          <h2 className="text-xl font-bold text-slate-900">What SiliconPath Provides</h2>
+          <h2 className="text-xl font-bold text-slate-900">What SimpleSilicon Provides</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {PILLARS.map((item) => (
               <div
@@ -132,7 +132,7 @@ export default function AboutPage() {
               With the advent of open-source silicon initiatives — like the <strong>SkyWater 130nm PDK</strong>, <strong>OpenROAD</strong>, <strong>Yosys</strong>, and <strong>Magic</strong> — anyone with a computer can now learn how chips are synthesized, placed, routed, and physically verified.
             </p>
             <p>
-              SiliconPath was created to bridge the gap between academic theory and day-to-day tapeout reality: providing structured curriculums, real EDA log analysis, and rigorous interview questions completely free.
+              SimpleSilicon was created to bridge the gap between academic theory and day-to-day tapeout reality: providing structured curriculums, real EDA log analysis, and rigorous interview questions completely free.
             </p>
           </div>
         </section>
@@ -162,7 +162,7 @@ export default function AboutPage() {
               <span className="text-xs font-mono uppercase tracking-wider text-slate-400">Open Community & Feedback</span>
               <h3 className="text-xl font-bold text-white">Questions, Suggestions, or Contributions?</h3>
               <p className="text-xs text-slate-300 max-w-lg leading-relaxed">
-                SiliconPath is continuously updated with new lab cases, timing closure scenarios, and interview questions. We welcome technical feedback from semiconductor engineers worldwide.
+                SimpleSilicon is continuously updated with new lab cases, timing closure scenarios, and interview questions. We welcome technical feedback from semiconductor engineers worldwide.
               </p>
               <div className="pt-2">
                 <a

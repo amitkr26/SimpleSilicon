@@ -185,7 +185,7 @@ export default function CoursesPage() {
             <div className="space-y-1">
               <h3 className="text-lg font-bold text-white">Looking for the complete structured curriculum?</h3>
               <p className="text-xs text-slate-300 max-w-xl leading-relaxed">
-                SiliconPath provides 15 structured learning paths covering 150 technical modules from Digital Logic and Verilog HDL to Clock Tree Synthesis and Physical Verification.
+                SimpleSilicon provides 15 structured learning paths covering 150 technical modules from Digital Logic and Verilog HDL to Clock Tree Synthesis and Physical Verification.
               </p>
             </div>
             <div className="flex items-center gap-3 shrink-0">

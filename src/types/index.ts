@@ -1,5 +1,5 @@
 /**
- * SiliconPath — Type definitions
+ * SimpleSilicon — Type definitions
  *
  * This platform is a public VLSI learning site with no authenticated features.
  * All content types live in:

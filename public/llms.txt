@@ -1,6 +1,6 @@
-# SiliconPath
+# SimpleSilicon
 
-SiliconPath is a 100% free learning platform for VLSI and semiconductor engineers — no paywalls, no premium tiers, no course selling, no login required.
+SimpleSilicon is a 100% free learning platform for VLSI and semiconductor engineers — no paywalls, no premium tiers, no course selling, no login required.
 
 ## Core Features
 - 7 structured **VLSI Learning Academy** tracks with day-by-day curricula, practice quizzes, gated assessments, and embedded NPTEL + YouTube course videos per track.

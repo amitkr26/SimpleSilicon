@@ -1,8 +1,8 @@
 {
-  "name": "siliconpath",
+  "name": "simplesilicon",
   "version": "1.0.0",
   "private": true,
-  "description": "SiliconPath — 100% free VLSI learning platform: 7 academy tracks, 15 learning paths / 150 modules, embedded NPTEL + YouTube lectures, 55 STA interview questions.",
+  "description": "SimpleSilicon — 100% free VLSI learning platform: 7 academy tracks, 15 learning paths / 150 modules, embedded NPTEL + YouTube lectures, 55 STA interview questions.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

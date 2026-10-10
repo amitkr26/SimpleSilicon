@@ -1,10 +1,10 @@
-# SiliconPath — Free VLSI Learning Platform
+# SimpleSilicon — Free VLSI Learning Platform
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-SiliconPath is a 100% free learning platform for VLSI and semiconductor engineers. No paywalls, no premium tiers, no course selling, no login required. Live at [siliconpath.in](https://siliconpath.in) · hosted on Vercel ([siliconpath.vercel.app](https://siliconpath.vercel.app)).
+SimpleSilicon is a 100% free learning platform for VLSI and semiconductor engineers. No paywalls, no premium tiers, no course selling, no login required. Live at [siliconpath.in](https://siliconpath.in) · hosted on Vercel ([siliconpath.vercel.app](https://siliconpath.vercel.app)).
 
-This repository **is** the Next.js web application — the app lives at the repo root (`src/`, `public/`, `package.json`), with support dirs (`project-bible/`, `docs/`) alongside.
+This repository **is** the Next.js web application — the app lives at the repo root (`src/`, `public/`, `package.json`), with support dirs (`project-bible/`) alongside.
 
 ## Features
 
@@ -48,10 +48,6 @@ This repository **is** the Next.js web application — the app lives at the repo
 | `public/` | Static assets (`llms.txt`, `manifest.json`, icons) |
 | `supabase/` | 2 academy migrations (learning tracks/days/questions/results) |
 | `project-bible/` | Architecture, security, changelog, product docs (owner mandate) |
-| `docs/` | Audit reports (`audit-reports/`) and session reports (`session-reports/`) |
-
-## Getting Started
-| `docs/` | Audit reports (`audit-reports/`) and session reports (`session-reports/`) |
 
 ## Getting Started
 

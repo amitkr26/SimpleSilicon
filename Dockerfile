@@ -1,6 +1,6 @@
 # ============================================================
-# SiliconPath — Next.js 14 Production Dockerfile
-# Build: docker build -t siliconpath .
+# SimpleSilicon — Next.js 14 Production Dockerfile
+# Build: docker build -t simplesilicon .
 # ============================================================
 
 # Stage 1: Dependencies

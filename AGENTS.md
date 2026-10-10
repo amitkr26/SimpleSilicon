@@ -31,8 +31,8 @@ Not lazy about: understanding the problem (read it fully and trace the real flow
 
 (Yes, this file also applies to agents working on the ponytail repo itself. Especially to them.)
 
-## SiliconPath documentation maintenance (owner mandate)
+## SimpleSilicon documentation maintenance (owner mandate)
 
-- **All documentation lives in `project-bible/`** (architecture, security, changelog, spec, ADRs, section guides). **All audit reports live in `docs/audit-reports/`**; session reports in `docs/session-reports/`. Keep root clean — only `README.md`, `AGENTS.md`, `LICENSE`, code, and config.
-- **After every change, update the documentation and audit reports that the change touches**: at minimum a dated `CHANGELOG.md` entry (exact files, root cause, exact change), plus any affected section guide or report. Never leave a stale claim that contradicts the code or live data.
+- **All documentation lives in `project-bible/`** (architecture, security, changelog, spec, ADRs, section guides). Keep root clean — only `README.md`, `AGENTS.md`, `LICENSE`, code, and config. (The former `docs/audit-reports/` + `docs/session-reports/` trees were removed per owner; process notes now go into the CHANGELOG.)
+- **After every change, update the documentation the change touches**: at minimum a dated `CHANGELOG.md` entry (exact files, root cause, exact change), plus any affected section guide. Never leave a stale claim that contradicts the code or live data.
 - Before any `git push`: credential scan (see `project-bible/SECURITY.md`), `.gitignore` coverage, history check. Rotate, never just ignore.

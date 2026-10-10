@@ -194,7 +194,7 @@ export default function ModulePage() {
           </p>
 
           <div className="bg-[#0B1120] text-slate-300 font-mono text-xs p-4 rounded-xl border border-slate-800 space-y-1.5 overflow-x-auto">
-            <p className="text-slate-500"># SiliconPath :: Technical Verification Script</p>
+            <p className="text-slate-500"># SimpleSilicon :: Technical Verification Script</p>
             <p><span className="text-blue-400">set_operating_conditions</span> -analysis_type on_chip_variation</p>
             <p><span className="text-blue-400">set_clock_uncertainty</span> -setup 0.080 [get_clocks core_clk]</p>
             <p><span className="text-blue-400">set_clock_uncertainty</span> -hold 0.040 [get_clocks core_clk]</p>

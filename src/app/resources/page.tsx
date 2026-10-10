@@ -18,7 +18,7 @@ import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 
 export const metadata = {
-  title: "VLSI Career Resources & Engineering Guides — SiliconPath",
+  title: "VLSI Career Resources & Engineering Guides — SimpleSilicon",
   description:
     "Curated career resources for semiconductor engineers: role breakdowns (PD, DV, RTL, DFT), resume templates, study roadmaps, and interview preparation.",
 };
@@ -210,7 +210,7 @@ export default function ResourcesPage() {
             <ShieldCheck className="w-5 h-5 text-emerald-600" /> Platform Principles
           </h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            All career guides, syllabus modules, and interview questions on SiliconPath are written from direct tapeout and timing closure experience. We do not accept sponsored recruitment placements, pay-for-placement resume services, or locked premium tiers. Everything is 100% free and open to anyone studying semiconductor engineering.
+            All career guides, syllabus modules, and interview questions on SimpleSilicon are written from direct tapeout and timing closure experience. We do not accept sponsored recruitment placements, pay-for-placement resume services, or locked premium tiers. Everything is 100% free and open to anyone studying semiconductor engineering.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
-# SiliconPath — Product Definition
+# SimpleSilicon — Product Definition
 
 ## Vision
-SiliconPath is a 100% free VLSI learning platform for semiconductor engineers. No paywalls, no premium tiers, no fake social proof, no course selling.
+SimpleSilicon is a 100% free VLSI learning platform for semiconductor engineers. No paywalls, no premium tiers, no fake social proof, no course selling.
 
 ## Core Products & Learning Surfaces
 
@@ -65,5 +65,4 @@ SiliconPath is a 100% free VLSI learning platform for semiconductor engineers. N
 - Vercel (hosting)
 
 ## Partner Platforms
-- [BerojgarDegreeWala](https://berojgardegreewala.vercel.app) — Opportunity aggregator for semiconductor careers
 - [ElectroBridge](https://electrobridge.vercel.app) — AI resume builder for engineers

@@ -1,9 +1,24 @@
 # Changelog
 
-All notable changes to SiliconPath will be documented in this file.
+All notable changes to SimpleSilicon will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+---
+
+## [Unreleased] — 2026-10-10
+
+### Changed
+- **Rebranded SiliconPath → SimpleSilicon** across all code, configs, and docs (per owner): `package.json` name `simplesilicon` + description, `public/manifest.json`, `public/llms.txt` title, `src/app/layout.tsx` metadata/JSON-LD, `src/app/{page,about,resources,courses}.tsx`, `src/components/{Navbar,Footer}.tsx`, the module-page script banner, `src/types/index.ts` + `src/styles/design-tokens.ts` + `src/app/globals.css` comments, `src/__tests__/curriculum-integrity.test.ts` `describe` string, `opencode.json` agent prompt, `AGENTS.md`, `README.md`, `project-bible/{PRODUCT,ARCHITECTURE,DEVELOPMENT,SECURITY}.md`, `Dockerfile` (build tag `simplesilicon`), `docker-compose.yml` (`container_name: simplesilicon_app`, `NEXT_PUBLIC_APP_NAME=SimpleSilicon`), `.env.example`, `LICENSE` copyright, and `package-lock.json` regenerated (root package `simplesilicon`).
+- **Functional URLs kept unchanged** (live domain + hosting): `siliconpath.in` (layout `metadataBase`/canonical/OG/JSON-LD, `sitemap.ts`, `robots.ts`, `llms.txt` links, test assertions), `siliconpath.vercel.app` (SECURITY env table, compose `NEXT_PUBLIC_SITE_URL`), `hello@siliconpath.in` (about contact), `security@siliconpath.vercel.app` (SECURITY contact), and the gitignored local `siliconpath-credentials.txt` read by `.opencode/mcp-servers/*`.
+- `project-bible/PRODUCT.md` dropped the BerojgarDegreeWala partner-platform link (gone since 635af4f); `project-bible/DEVELOPMENT.md` repo-layout dropped the deleted `scripts/` row; `README.md`/`AGENTS.md`/`DEVELOPMENT.md` stale `docs/` references removed.
+
+### Removed
+- **`docs/` tree deleted per owner** — all 6 audit + session reports (2026-09-12 ×2, 09-16 ×2, 09-19 ×2) removed from disk; `docs/audit-reports/` + `docs/session-reports/` no longer exist. AGENTS.md mandate updated: all documentation lives in `project-bible/`; process notes go into the CHANGELOG.
+
+### Verified
+- `tsc` 0 errors; jest 6/6; `next build` green; dev server returns 200 on `/`, `/about`, `/academy`, `/learn`, `/learn/video-courses`, `/courses`, `/resources`, `/engineering-lab`, `/sta-interview-questions`. Zero remaining non-URL `SiliconPath`/`siliconpath` references in tracked files.
 
 ---
 

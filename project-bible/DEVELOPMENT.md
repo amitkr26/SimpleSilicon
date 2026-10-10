@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-SiliconPath is a single Next.js 14 (App Router) application. The repo root **is** the app — package.json, tsconfig, next.config, tailwind config, `src/`, `public/`, `supabase/` all live at root.
+SimpleSilicon is a single Next.js 14 (App Router) application. The repo root **is** the app — package.json, tsconfig, next.config, tailwind config, `src/`, `public/`, `supabase/` all live at root.
 
 ### Prerequisites
 - Node.js >= 20
@@ -10,8 +10,7 @@ SiliconPath is a single Next.js 14 (App Router) application. The repo root **is*
 - Docker (optional, for local containers / production image)
 
 ### Repo Layout
-- Root (`/`): the Next.js 14 application — `src/` (app router, components, lib, styles), `public/`, `supabase/` (migrations + seed), `scripts/` (content maintenance utilities)
-- `docs/`: audit reports (`docs/audit-reports/`) and session reports (`docs/session-reports/`)
+- Root (`/`): the Next.js 14 application — `src/` (app router, components, lib, styles), `public/`, `supabase/` (2 academy migrations + seed data)
 - `project-bible/`: architecture, security, changelog, spec, ADRs (owner mandate: update after every change)
 
 ## Essential Commands
@@ -43,7 +42,7 @@ npm run build
 ## Deployment
 
 - **Production**: Vercel, connected to the repo root (`vercel.json`: `framework: nextjs`). Live at https://siliconpath.vercel.app
-- **Docker**: `docker build -t siliconpath .` (multi-stage, Next.js standalone output, port 3000)
+- **Docker**: `docker build -t simplesilicon .` (multi-stage, Next.js standalone output, port 3000)
 - `docker-compose.yml` (root): `docker compose up --build` runs the production-mode app container on :3000
 
 ## AI Agent Operating Contract

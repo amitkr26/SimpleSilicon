@@ -1,4 +1,4 @@
-# SiliconPath — Technical Architecture
+# SimpleSilicon — Technical Architecture
 
 **Version:** 2026-09-12 · **Pattern:** Modular Monolith on Next.js & Supabase — Free VLSI Learning Platform
 
@@ -6,7 +6,7 @@
 
 ## 1. Architectural Overview
 
-SiliconPath operates as a **modular monolith** on Next.js 14 (App Router) deployed to Vercel, backed by Supabase PostgreSQL for optional progress persistence.
+SimpleSilicon operates as a **modular monolith** on Next.js 14 (App Router) deployed to Vercel, backed by Supabase PostgreSQL for optional progress persistence.
 
 The application serves a single focused purpose: **free VLSI learning for semiconductor engineers**. No authentication is required for any learning content. All content is freely accessible.
 

@@ -454,7 +454,7 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className="block px-3 py-2 rounded-lg text-sm font-medium text-slate-700 hover:bg-slate-50"
             >
-              About SiliconPath
+              About SimpleSilicon
             </Link>
           </div>
 

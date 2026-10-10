@@ -605,7 +605,7 @@ export default function HomePage() {
       </section>
 
       {/* ============================================================ */}
-      {/* 7. PHILOSOPHY: Why SiliconPath                                */}
+      {/* 7. PHILOSOPHY: Why SimpleSilicon                                */}
       {/* ============================================================ */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="border border-slate-200 bg-white rounded-xl p-8 sm:p-10 shadow-sm">
@@ -617,7 +617,7 @@ export default function HomePage() {
               Built for engineers, by an engineer.
             </h2>
             <p className="text-sm text-slate-500 mt-2 leading-relaxed">
-              SiliconPath was created to provide the structured, hands-on VLSI learning resource that was missing in university and online courses.
+              SimpleSilicon was created to provide the structured, hands-on VLSI learning resource that was missing in university and online courses.
             </p>
           </div>
 

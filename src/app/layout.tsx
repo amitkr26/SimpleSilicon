@@ -12,30 +12,30 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space
 export const metadata: Metadata = {
   metadataBase: new URL("https://siliconpath.in"),
   title: {
-    default: "SiliconPath — Free VLSI Learning Platform",
-    template: "%s | SiliconPath",
+    default: "SimpleSilicon — Free VLSI Learning Platform",
+    template: "%s | SimpleSilicon",
   },
   description:
     "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
   keywords: [
     "VLSI", "physical design", "STA", "synthesis", "Verilog", "semiconductor",
     "ASIC", "RTL design", "digital logic", "EDA", "OpenLane", "OpenROAD",
-    "clock tree synthesis", "timing signoff", "DFT", "low power", "SiliconPath",
+    "clock tree synthesis", "timing signoff", "DFT", "low power", "SimpleSilicon",
   ],
-  authors: [{ name: "SiliconPath" }],
-  creator: "SiliconPath",
+  authors: [{ name: "SimpleSilicon" }],
+  creator: "SimpleSilicon",
   openGraph: {
     type: "website",
     locale: "en_IN",
     url: "https://siliconpath.in",
-    siteName: "SiliconPath",
-    title: "SiliconPath — Free VLSI Learning Platform",
+    siteName: "SimpleSilicon",
+    title: "SimpleSilicon — Free VLSI Learning Platform",
     description:
       "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SiliconPath — Free VLSI Learning Platform",
+    title: "SimpleSilicon — Free VLSI Learning Platform",
     description:
       "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
   },
@@ -76,14 +76,14 @@ export default function RootLayout({
         "@type": "WebSite",
         "@id": "https://siliconpath.in/#website",
         "url": "https://siliconpath.in",
-        "name": "SiliconPath — Free VLSI Learning Platform",
+        "name": "SimpleSilicon — Free VLSI Learning Platform",
         "description": "100% free VLSI learning — 15 paths, 150 modules, 55 interview questions. No login required.",
         "inLanguage": "en-IN",
       },
       {
         "@type": "Organization",
         "@id": "https://siliconpath.in/#organization",
-        "name": "SiliconPath",
+        "name": "SimpleSilicon",
         "url": "https://siliconpath.in",
         "logo": "https://siliconpath.in/icon.svg",
         "description": "VLSI learning platform covering physical design, STA, synthesis, Verilog, and design verification.",

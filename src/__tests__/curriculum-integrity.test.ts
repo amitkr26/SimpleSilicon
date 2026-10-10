@@ -13,7 +13,7 @@ const ACADEMY_TRACK_SLUGS = [
   "interview-prep",
 ];
 
-describe("SiliconPath Curriculum & Architecture Integrity", () => {
+describe("SimpleSilicon Curriculum & Architecture Integrity", () => {
   test("contains exactly 15 learning paths", () => {
     expect(LEARNING_PATHS.length).toBe(15);
   });
