@@ -4,6 +4,7 @@
 
 | Date | Action | Systems Affected |
 | :--- | :--- | :--- |
+| **2026-10-10** | Vercel access token provided in plaintext chat during mitigation deploy; used for a single production deploy and MCP verification. Stored only in the gitignored `siliconpath-credentials.txt` (format: `Vercel` line + `Access Token: <token>`, parsed by `_creds.mjs`). **Rotate recommended — treat chat-pasted token as exposed.** | Vercel project `prj_ZVXuFY5pm25Fzd6VHyeLNHwygSCt` (team `siliconpath`) |
 | **2026-08-17** | **INCIDENT: Two credentials leaked in `change-fk.js` (root) and `.opencode/mcp-servers/change-fk.js` committed to public repo. Files deleted; tokens MUST be rotated.** | Supabase DB2 (`jbqjipwanfsxyqkfrrpx`) — Management API token (`sbp_...`) + service role key (`sb_secret_...`) |
 | **2026-08-14** | Full rotation of all 4 database credentials post-git-history-rewrite | Supabase DB1, Supabase DB2, Neon DB1, Neon DB2 |
 | **2026-08-14** | Vercel access token rotated | Vercel project deployment |
