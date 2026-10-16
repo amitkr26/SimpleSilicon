@@ -210,9 +210,9 @@ export default function LearnIndex() {
       {filteredPaths.length === 0 && (
         <div className="text-center py-16 bg-white border border-slate-200 rounded-xl p-8 space-y-3">
           <p className="text-sm font-semibold text-slate-900">No matching learning paths</p>
-          <p className="text-xs text-slate-500">
-            No paths matched "{searchQuery}". Try searching for Verilog, STA, or TCL.
-          </p>
+<p className="text-xs text-slate-500">
+              No paths matched {searchQuery}. Try searching for Verilog, STA, or TCL.
+            </p>
           <button
             onClick={() => {
               setSearchQuery("");

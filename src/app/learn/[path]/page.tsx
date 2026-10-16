@@ -33,7 +33,7 @@ export default function LearningPathPage() {
     return (
       <div className="py-20 px-4 max-w-md mx-auto text-center space-y-4">
         <h2 className="text-xl font-bold text-slate-900">Path Not Found</h2>
-        <p className="text-slate-600 text-sm">No learning path matches "{pathSlug}".</p>
+        <p className="text-slate-600 text-sm">No learning path matches {pathSlug}.</p>
         <div className="pt-2">
           <Button href="/learn" variant="primary">Browse All Learning Paths</Button>
         </div>
@@ -41,11 +41,13 @@ export default function LearningPathPage() {
     );
   }
 
-  const completedModules = useMemo(() => {
-    if (typeof window === "undefined") return [] as string[];
-    const raw = localStorage.getItem(`learn-${pathSlug}-completed`);
-    return raw ? JSON.parse(raw) : [];
-  }, [pathSlug]);
+  const completedModules = pathSlug
+    ? (() => {
+        if (typeof window === "undefined") return [] as string[];
+        const raw = localStorage.getItem(`learn-${pathSlug}-completed`);
+        return raw ? JSON.parse(raw) : [];
+      })()
+    : [];
 
   const totalModules = path.modules.length;
   const completedCount = completedModules.length;
